@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { FaFistRaised, FaRebel } from "react-icons/fa";
-import { TweenMax } from "gsap";
-import { Power3 } from "gsap/gsap-core";
+// import { TweenMax } from "gsap";
+// import { Power3 } from "gsap/gsap-core";
 export default function TopNav() {
   let hamburgerIcon = useRef(null);
   console.log(hamburgerIcon);
