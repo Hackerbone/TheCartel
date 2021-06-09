@@ -19,3 +19,18 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+.icons {
+    transition: 0.2s ease-in-out;
+    opacity: .4;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.red-text {
+    color: $primary-text;
+    text-decoration-color: $primary-text;
+
+}

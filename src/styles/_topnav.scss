@@ -14,7 +14,11 @@
 
     .logo {
         font-size: 3rem;
-        text-decoration: line-through;
+
+        span {
+            text-decoration: line-through;
+
+        }
     }
 
     .links {
@@ -41,20 +45,13 @@
             flex-direction: column;
             background-color: $secondary-bg;
             color: $primary-bg;
-            transition: 0.3s ease-in-out all;
+            transition: 0.4s ease-in-out all;
             position: absolute;
-            top: calc(-100vh);
-            opacity: 0;
-            width: 100%;
-            height: calc(100vh - 60px);
-        }
-
-        .show {
-            opacity: 1;
-            z-index: 1000;
+            left: calc(-100vh);
             top: calc(60px);
+            opacity: 0;
+            width: 0%;
             height: calc(100vh - 60px);
-            width: 100%;
             align-items: flex-start;
             justify-content: flex-start;
 
@@ -67,6 +64,37 @@
                     & {
                         font-size: 4rem !important;
 
+                    }
+                }
+            }
+        }
+
+        .show {
+            // transition: 0.6s ease-in-out all;
+            opacity: 1;
+            z-index: 1000;
+            top: calc(60px);
+            height: calc(100vh - 60px);
+            width: 100%;
+            left: 0;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .nav-links {
+                margin: 2rem 0;
+                font-size: 6rem !important;
+
+                @media only screen and (max-width: 600px) {
+
+                    & {
+                        font-size: 4rem !important;
+                    }
+                }
+
+                @media only screen and (max-width: 552px) {
+
+                    & {
+                        font-size: 3rem !important;
                     }
                 }
             }
