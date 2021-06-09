@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaFistRaised, FaRebel } from "react-icons/fa";
-// import { TweenMax } from "gsap";
-// import { Power3 } from "gsap/gsap-core";
+import { TweenMax } from "gsap";
+import { Power3 } from "gsap/gsap-core";
 export default function TopNav() {
   let hamburgerIcon = useRef(null);
   console.log(hamburgerIcon);
@@ -11,13 +11,13 @@ export default function TopNav() {
     setClicked(!clicked);
   };
 
-  // useEffect(() => {
-  //   console.log(hamburgerIcon);
-  //   TweenMax.to(hamburgerIcon, 0.8, {
-  //     opacity: 0.4,
-  //     ease: Power3.easeOut,
-  //   });
-  // }, []);
+  useEffect(() => {
+    console.log(hamburgerIcon);
+    TweenMax.to(hamburgerIcon, 1, {
+      opacity: 0.4,
+      ease: Power3.easeOut,
+    });
+  }, []);
   return (
     <div className="navbar">
       <div className="logo">
