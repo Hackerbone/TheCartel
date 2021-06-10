@@ -1,5 +1,6 @@
 import { TweenMax, Power3 } from "gsap/gsap-core";
 import React, { useRef, useEffect } from "react";
+import StfButton from "../components/StfButton";
 
 export default function Landing() {
   let mainText = useRef(null);
@@ -9,16 +10,18 @@ export default function Landing() {
     TweenMax.to(mainText, 2, {
       top: 0,
       opacity: 1,
+      transform: "scale(1)",
       ease: Power3.easeOut,
     });
     TweenMax.to(glitchText, 2, {
       top: 0,
       opacity: 1,
+      transform: "scale(1)",
       ease: Power3.easeOut,
     });
   }, []);
   return (
-    <div className="container">
+    <div className="container landing-container">
       <div className="row">
         <div className="top-header " ref={(el) => (mainText = el)}>
           <span className="strike red-text">Secret </span>
@@ -33,6 +36,7 @@ export default function Landing() {
             BEGIN THE REBELLION
           </p>
         </div>
+        <StfButton to={"/access"}>Access Data</StfButton>
       </div>
     </div>
   );

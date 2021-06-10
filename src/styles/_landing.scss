@@ -4,9 +4,13 @@
     --f: calc(var(--f-size) * var(--f-unit));
 }
 
-.container {
+.landing-container {
     background: url("../assets/transparent-detective.png")no-repeat fixed center, $primary-bg;
     background-size: contain;
+
+}
+
+.container {
     background-color: $primary-bg;
     min-height: 100vh;
     height: auto;
@@ -15,6 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 
     .row {
         display: flex;
@@ -29,12 +34,15 @@
         position: relative;
         top: 4rem;
         opacity: 0;
+        transform: scale(1.6),
+
     }
 
     .glitch {
         position: relative;
         top: -4rem;
         opacity: 0;
+        transform: scale(1.6);
 
         p {
             flex: 1;
