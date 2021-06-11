@@ -15,7 +15,7 @@
         z-index: 0;
         display: flex;
 
-
+        transition: 0.2s ease-in-out all;
     }
 
 
@@ -27,6 +27,11 @@
         svg path {
             stroke-dasharray: 500;
             animation: dash 3s linear infinite;
+        }
+
+        @media only screen and (max-width: 768px) {
+            justify-content: center;
+            transform: rotate(90deg);
         }
 
     }
@@ -42,12 +47,17 @@
             animation-delay: 1s;
         }
 
+        @media only screen and (max-width: 768px) {
+            display: none;
+        }
+
     }
 
     .access-header {
         padding: 2rem;
         font-size: 6rem;
         text-align: center;
+        z-index: 3;
 
         @media only screen and (max-width: 768px) {
             font-size: 3rem;
