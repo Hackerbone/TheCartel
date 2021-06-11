@@ -1,6 +1,5 @@
 import { Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import TopNav from "./components/TopNav";
 import Access from "./pages/Access";
 import Landing from "./pages/Landing";
 
@@ -21,11 +20,10 @@ function App() {
   // };
   return (
     <>
-      <TopNav />
       {routes.map(({ path, Component, name }) => (
         <Route key={name} path={path} exact>
           {({ match }) => (
-            <CSSTransition in={match != null} timeout={600} classNames="page" unmountOnExit>
+            <CSSTransition in={match != null} timeout={500} classNames="page" unmountOnExit>
               <div className="page">
                 <Component />
               </div>

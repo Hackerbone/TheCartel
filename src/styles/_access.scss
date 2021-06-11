@@ -1,10 +1,101 @@
 .access-container {
-    // transform: scale(1.6);
-    // transition: 0.4s ease-in-out all;
 
-    .text {
-        position: relative;
-        top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .bg-svg-left,
+    .bg-svg-right {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        z-index: 0;
+        display: flex;
+
+
     }
 
+
+    .bg-svg-left {
+        background-position: left center;
+        left: 0;
+        justify-content: flex-start;
+
+        svg path {
+            stroke-dasharray: 500;
+            animation: dash 3s linear infinite;
+        }
+
+    }
+
+    .bg-svg-right {
+        background-position: right center;
+        right: 0;
+        justify-content: flex-end;
+
+        svg path {
+            stroke-dasharray: 500;
+            animation: dash 3s linear infinite;
+            animation-delay: 1s;
+        }
+
+    }
+
+    .access-header {
+        padding: 2rem;
+        font-size: 6rem;
+        text-align: center;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 3rem;
+
+        }
+    }
+
+
+
+    .access-row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .text-muted {
+            padding-top: 1rem;
+            color: rgba($color: $secondary-bg, $alpha: 0.5)
+        }
+
+        .input-box {
+            padding: 1rem 2rem;
+            font-size: 1.6rem;
+            background-color: transparent;
+            border: 2px solid $secondary-bg;
+            color: $secondary-bg;
+            z-index: 3;
+
+            &:focus {
+                outline: none;
+            }
+
+
+            @media only screen and (max-width: 768px) {
+                & {
+                    font-size: 1rem;
+                    padding: 1rem;
+                }
+
+            }
+        }
+    }
+}
+
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 1000;
+    }
 }

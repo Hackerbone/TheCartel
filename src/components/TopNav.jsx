@@ -7,25 +7,28 @@ export default function TopNav() {
   let hamburgerIcon = useRef(null);
   let topNavigation = useRef(null);
 
-  console.log(hamburgerIcon);
-  const [clicked, setClicked] = useState(0);
-
-  const toggleDropdown = () => {
-    setClicked(!clicked);
-  };
-
   useEffect(() => {
     console.log(hamburgerIcon);
     TweenMax.to(hamburgerIcon, 1, {
-      opacity: 0.4,
+      opacity: 1,
       ease: Power3.easeOut,
     });
 
+    TweenMax.from(topNavigation, 1, {
+      top: -400,
+      ease: Power3.easeOut,
+    });
     TweenMax.to(topNavigation, 1, {
       top: 0,
       ease: Power3.easeOut,
     });
   }, []);
+
+  const [clicked, setClicked] = useState(0);
+
+  const toggleDropdown = () => {
+    setClicked(!clicked);
+  };
   return (
     <div ref={(el) => (topNavigation = el)} className="navbar">
       <NavLink to={"/"} exact className="logo">
@@ -35,8 +38,8 @@ export default function TopNav() {
       </NavLink>
 
       <div id="dropdown" className={clicked ? "links show" : "links"}>
-        <NavLink key={"access"} to={"/access"} activeClassName="red-text" exact>
-          Access
+        <NavLink key={"access"} to={"/access"} activeClassName="red-text" exact className="nav-links">
+          access
         </NavLink>
         <p className="nav-links">organisations</p>
         <p className="nav-links">people</p>

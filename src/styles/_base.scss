@@ -28,7 +28,7 @@ a {
 }
 
 .icons {
-    transition: 0.2s ease-in-out;
+    transition: 0.4s ease-in-out;
     opacity: .4;
 
     &:hover {
@@ -52,18 +52,21 @@ a {
 
 .page-enter {
     transform: scale(1.6);
+    opacity: 0;
+    filter: blur(1px);
 
 }
 
 .page-enter-active {
     transform: scale(1);
-    transition: 0.6s transform;
-
-
+    transition: 0.6s all;
+    transition-delay: 0.5s;
+    opacity: 1;
 }
 
 .page-exit {
     transform: scale(1);
+    opacity: 1;
 
     .navbar {
         top: 0;
@@ -71,8 +74,9 @@ a {
 }
 
 .page-exit-active {
-    transform: scale(0);
-    transition: 0.6s transform;
+    transform: scale(0.1);
+    transition: 0.6s all;
+    opacity: 0;
 
     .navbar {
         top: -400px;
