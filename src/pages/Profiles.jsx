@@ -17,6 +17,8 @@ export default function Profiles() {
   //   useGetData(query, pageNumber);
   var header = useRef(null);
   var cardContainer = useRef(null);
+  var content = useRef(null);
+
   // const data = [
   //   {
   //     location: {
@@ -65,6 +67,13 @@ export default function Profiles() {
       opacity: 0,
       ease: Power3.easeOut,
     });
+
+    TweenMax.to(content, 1, {
+      delay: 7,
+      overflowY: "scroll",
+      opacity: 1,
+      ease: Power3.easeOut,
+    });
     TweenMax.to(cardContainer, 3, {
       delay: 7,
       opacity: 1,
@@ -78,7 +87,7 @@ export default function Profiles() {
   return (
     <div className="container profile-container">
       <TopNav />
-      <div className="profile-content">
+      <div className="profile-content" ref={(el) => (content = el)}>
         <div className="profile-header" ref={(el) => (header = el)}>
           {" "}
           <Typical wrapper="h1" steps={["Social Media Users have been compromised, we have profiles of 100 users. Hover to reveal their facade", 3000]} />
