@@ -6,16 +6,19 @@
     align-items: center;
     padding-top: 60px;
     padding-bottom: 60px;
+    overflow: hidden;
 
     .bg-svg-left,
     .bg-svg-right {
         position: absolute;
         height: 100vh;
-        width: 100%;
         z-index: 0;
         display: flex;
-
         transition: 0.2s ease-in-out all;
+
+        svg {
+            height: 100vh !important;
+        }
     }
 
 
@@ -27,11 +30,20 @@
         svg path {
             stroke-dasharray: 500;
             animation: dash 3s linear infinite;
+            background-size: contain;
         }
+
 
         @media only screen and (max-width: 768px) {
             justify-content: center;
+            align-items: center;
             transform: rotate(90deg);
+            width: 100%;
+            height: 90vw;
+
+            svg {
+                height: 90vw !important;
+            }
         }
 
     }
@@ -44,7 +56,7 @@
         svg path {
             stroke-dasharray: 500;
             animation: dash 3s linear infinite;
-            animation-delay: 1s;
+            animation-delay: -1s;
         }
 
         @media only screen and (max-width: 768px) {
@@ -75,8 +87,10 @@
         flex-direction: column;
 
         .text-muted {
-            padding-top: 1rem;
-            color: rgba($color: $secondary-bg, $alpha: 0.5)
+            margin-top: 1rem;
+            padding: 0.2rem 0.2rem;
+            color: rgba($color: $secondary-bg, $alpha: 0.5);
+            transition: 0.3s ease-in-out all;
         }
 
         .input-box {

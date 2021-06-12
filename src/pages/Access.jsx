@@ -1,26 +1,21 @@
-import React from "react";
-// import { TweenMax, Power3 } from "gsap/gsap-core";
+import React, { useState, useRef } from "react";
 import TopNav from "../components/TopNav";
 import Typical from "react-typical";
 import StfButton from "../components/StfButton";
-
+import { useHistory } from "react-router";
 export default function Access() {
-  // let mainText = useRef(null);
-
-  // useEffect(() => {
-  //   TweenMax.to(mainText, 2, {
-  //     top: 0,
-  //     ease: Power3.easeOut,
-  //   });
-  //   TweenMax.from(topNav.current, 1, {
-  //     top: -400,
-  //     ease: Power3.easeOut,
-  //   });
-  //   TweenMax.to(topNav.current, 1, {
-  //     top: 0,
-  //     ease: Power3.easeOut,
-  //   });
-  // }, []);
+  let hintText = useRef(null);
+  const history = useHistory();
+  const [input, setInput] = useState("");
+  const checkCredentials = () => {
+    if (input.toLowerCase() === "admin" || input.toLowerCase() === "rebel" || input.toLowerCase() === "leader") {
+      history.push("/confidential");
+    } else {
+      hintText.style.color = "#f0473e";
+      hintText.style.transform = "scale(1.1)";
+      hintText.style.backgroundColor = "#fbf5eb";
+    }
+  };
   return (
     <div className="container access-container">
       <div className="bg-svg-left">
@@ -43,10 +38,12 @@ export default function Access() {
         </span>
       </div>
       <div className="access-row">
-        <input type="text" name="name" className="input-box" placeholder="Who are you?" />
+        <input type="text" name="name" onChange={(e) => setInput(e.target.value)} className="input-box" placeholder="Who are you?" />
 
-        <p className="text-muted">Hint : One of the three above</p>
-        <StfButton to="#" style={{ padding: "1rem 3rem" }}>
+        <p className="text-muted" ref={(el) => (hintText = el)}>
+          Hint : One of the three above
+        </p>
+        <StfButton to="#" style={{ padding: "1rem 3rem" }} onClick={checkCredentials}>
           <Typical wrapper="span" loop={Infinity} steps={["Enter", 3400, "Entrar", 3400, "Entrer", 3400]} />
         </StfButton>
       </div>

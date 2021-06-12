@@ -1,11 +1,13 @@
 import { Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import Access from "./pages/Access";
+import Dashboard from "./pages/Dashboard";
 import Landing from "./pages/Landing";
 
 const routes = [
   { path: "/", name: "Home", Component: Landing },
   { path: "/access", name: "Access", Component: Access },
+  { path: "/confidential", name: "Confidential", Component: Dashboard },
 ];
 
 function App() {

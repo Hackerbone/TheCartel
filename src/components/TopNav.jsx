@@ -3,7 +3,7 @@ import { FaFistRaised, FaRebel } from "react-icons/fa";
 import { TweenMax } from "gsap";
 import { Power3 } from "gsap/gsap-core";
 import { NavLink } from "react-router-dom";
-export default function TopNav() {
+export default function TopNav({ style }) {
   let hamburgerIcon = useRef(null);
   let topNavigation = useRef(null);
 
@@ -30,7 +30,7 @@ export default function TopNav() {
     setClicked(!clicked);
   };
   return (
-    <div ref={(el) => (topNavigation = el)} className="navbar">
+    <div style={style} ref={(el) => (topNavigation = el)} className="navbar">
       <NavLink to={"/"} exact className="logo">
         <span className="red-text">S</span>
         <span>T</span>
@@ -41,9 +41,9 @@ export default function TopNav() {
         <NavLink key={"access"} to={"/access"} activeClassName="red-text" exact className="nav-links">
           access
         </NavLink>
-        <p className="nav-links">organisations</p>
+        {/* <p className="nav-links">organisations</p>
         <p className="nav-links">people</p>
-        <p className="nav-links">institutions</p>
+        <p className="nav-links">institutions</p> */}
       </div>
 
       <div
