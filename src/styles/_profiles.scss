@@ -1,0 +1,46 @@
+.profile-container {
+    height: auto;
+    min-height: 100vh;
+
+    .profile-content {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        height: 100%;
+        padding: 60px 1rem;
+
+
+        .profile-header {
+            font-size: 3rem;
+            padding: 1.2rem;
+
+            @media only screen and (max-width: 768px) {
+                font-size: 2rem;
+            }
+
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            .top-card {
+                margin: 1rem 0;
+            }
+
+            @media only screen and (max-width: 768px) {
+                justify-content: center;
+
+            }
+
+            @media only screen and (max-width: 480px) {
+                .stack-lines {
+                    padding: 0;
+                    border: 0;
+                }
+
+            }
+        }
+    }
+}

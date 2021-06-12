@@ -1,0 +1,82 @@
+.data-card {
+    background: $secondary-bg;
+    color: $primary-bg;
+    padding: 1.4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 22rem;
+    padding-bottom: 2rem;
+    transition: 0.4s ease-in-out all;
+    filter: blur(2px);
+
+    .profile-img {
+        margin: 0.3rem 0;
+        width: 5rem;
+        border-radius: 50%;
+        height: 5rem;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    @media only screen and (max-width: 522px) {
+        width: 18rem;
+
+    }
+}
+
+.top-card:hover {
+    border-right-color: $primary-text;
+    border-bottom-color: $primary-text;
+
+    .stack-lines {
+
+        border-right-color: $primary-text;
+        border-bottom-color: $primary-text;
+
+    }
+
+    .data-card {
+        filter: blur(0px);
+
+        background: $primary-text;
+        color: $secondary-bg;
+
+    }
+
+}
+
+.stack-lines {
+    border-right: 1px solid $secondary-bg;
+    border-bottom: 1px solid $secondary-bg;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    position: relative;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: inherit;
+    height: inherit;
+    padding-right: 0.3rem;
+    padding-bottom: 0.3rem;
+    transition: 0.5s ease-in-out all;
+
+}
+
+
+
+// @keyframes wiggle {
+//     0% {
+//         padding-right: 0.3rem;
+//         padding-bottom: 0.3rem;
+//     }
+
+//     50% {}
+
+//     100% {
+//         padding-right: 0.3rem;
+//         padding-bottom: 0.3rem;
+//     }
+// }
