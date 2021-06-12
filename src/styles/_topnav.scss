@@ -5,16 +5,17 @@
     background-color: transparent;
     color: $secondary-bg;
     position: absolute;
-    width: 100vw;
+    width: 100%;
     font-size: 2rem;
     top: -400px;
-    padding: 0 1rem;
 
     div {
         padding: 0 1rem;
     }
 
     .logo {
+        padding: 0 1rem;
+
         font-size: 3rem;
 
         span {

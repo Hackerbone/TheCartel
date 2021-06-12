@@ -18,8 +18,9 @@ body {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     font-family: $main-font;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
 }
 
 a {
