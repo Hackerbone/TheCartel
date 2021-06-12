@@ -13,7 +13,7 @@ export default function Modal({ show, setShow, id }) {
       console.log("HI?");
       setData(res.data.data);
     });
-  }, []);
+  }, [id]);
   return (
     <div style={show ? { display: "block" } : { display: "none" }} className="modal-container">
       <button

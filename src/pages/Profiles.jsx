@@ -59,14 +59,14 @@ export default function Profiles() {
     });
 
     TweenMax.from(cardContainer, 3, {
-      delay: 6,
+      delay: 7,
       position: "relative",
       top: 400,
       opacity: 0,
       ease: Power3.easeOut,
     });
     TweenMax.to(cardContainer, 3, {
-      delay: 6,
+      delay: 7,
       opacity: 1,
       top: 0,
       ease: Power3.easeOut,

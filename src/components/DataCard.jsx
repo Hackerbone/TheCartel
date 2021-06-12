@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function DataCard({ item, setSelected, setShow }) {
   return (
