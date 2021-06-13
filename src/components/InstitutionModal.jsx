@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FaHeart, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 export default function InstitutionModal({ show, setShow, id }) {
   const [data, setData] = useState([]);
