@@ -49,7 +49,7 @@ export default function Dashboard() {
           <Options heading={"Social Media Users"} count={100} to="/users" />
           <Options heading={"Social Media Posts"} count={201} to="/posts" />
           <Options heading={"Company Stocks"} count={25} to="/stocks" />
-          <Options heading={"Government Institutions"} count={100} to="/government" />
+          <Options heading={"Government Institutions"} count={100} to="/institutions" />
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { FaTimes } from "react-icons/fa";
 
 export default function StockModal({ show, setShow, id }) {
   const [data, setData] = useState([]);
+  const [read, setRead] = useState(0);
   useEffect(() => {
     axios({
       method: "GET",
@@ -52,7 +53,12 @@ export default function StockModal({ show, setShow, id }) {
               <h1>{data.Symbol}</h1>
               <h3> {data.Name}</h3>
               <h5>{data.Address}</h5>
-              <p className="text-muted">{data.Description}</p>
+              <p className="text-muted">
+                {!read ? data.Description.slice(0, 150) : data.Description}...
+                <span className="red-text" onClick={() => setRead(!read)}>
+                  {!read ? "Read More" : "Collapse"}
+                </span>
+              </p>
             </div>
             <div className="others">
               <h4 style={{ paddingBottom: "1rem" }}>Data Table</h4>
