@@ -1,0 +1,205 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background: $primary-bg;
+    color: $secondary-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .bg-svg-left,
+    .bg-svg-right {
+        position: absolute;
+        height: 100vh;
+        z-index: 0;
+        display: flex;
+        transition: 0.2s ease-in-out all;
+
+        svg {
+            height: 100vh !important;
+        }
+    }
+
+
+    .bg-svg-left {
+        background-position: left center;
+        left: 0;
+        justify-content: flex-start;
+
+        svg path {
+            stroke-dasharray: 500;
+            animation: dash 3s linear infinite;
+            background-size: contain;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            justify-content: center;
+            align-items: center;
+            transform: rotate(90deg);
+            width: 100%;
+            height: 90vw;
+
+            svg {
+                height: 90vw !important;
+            }
+        }
+
+    }
+
+    .post-profile-img {
+        border: 2px solid $secondary-bg;
+        margin: 0.3rem 0;
+        width: 5rem;
+        border-radius: 50%;
+        height: 5rem;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .bg-svg-right {
+        background-position: right center;
+        right: 0;
+        justify-content: flex-end;
+
+        svg path {
+            stroke-dasharray: 500;
+            animation: dash 3s linear infinite;
+            animation-delay: -1s;
+        }
+
+        @media only screen and (max-width: 768px) {
+            display: none;
+        }
+
+    }
+
+
+    .cancel-btn {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        border: 0;
+        background: transparent;
+        color: $secondary-bg;
+        font-size: 1.4rem;
+        margin: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s ease-in-out all;
+        cursor: pointer;
+
+        &:hover {
+            color: $primary-text;
+        }
+
+        &:active {
+            outline: none;
+
+        }
+    }
+
+    .modal-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        position: relative;
+        z-index: 40;
+        background: rgba($color: $primary-bg, $alpha: 0.2);
+
+        .tags {
+            margin: 0.4rem 0;
+
+            .tag {
+                background: $secondary-bg;
+                color: $primary-bg;
+                padding: 0.2rem 1rem;
+                margin: 0 0.3rem;
+            }
+        }
+
+        .post-img {
+            border: 5px solid $secondary-bg;
+            margin: 0.3rem 0;
+            width: 24rem;
+            height: 20rem;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .post-text {
+            font-size: 2rem;
+            margin: 1rem 0;
+            width: 80%;
+            text-align: center;
+        }
+
+        .likes {
+            display: flex;
+
+            align-items: center;
+
+            svg {
+                transition: 0.2s ease-in-out all;
+            }
+
+            &:hover {
+                svg {
+                    fill: $primary-text;
+                }
+            }
+
+            span {
+                padding: 0 0.3rem;
+            }
+        }
+
+        .location {
+            padding: 1rem;
+            text-align: center;
+
+            p {
+                margin-top: 1rem !important;
+            }
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        @media only screen and (max-width: 768px) {
+            font-size: 1.2rem;
+
+            .post-img {
+                border-width: 2px;
+                width: 12rem;
+                height: 8rem;
+            }
+        }
+
+
+        @media only screen and (max-width: 522px) {
+            font-size: 1rem !important;
+            width: 100%;
+
+            .post-img {
+                border-width: 2px;
+                width: 5rem;
+                height: 5rem;
+            }
+        }
+    }
+}

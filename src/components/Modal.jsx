@@ -74,7 +74,10 @@ export default function Modal({ show, setShow, id }) {
             </div>
           </>
         ) : (
-          <div className="loader">Loading...</div>
+          <div className="spinner">
+            <div className="dot1"></div>
+            <div className="dot2"></div>
+          </div>
         )}
       </div>
     </div>

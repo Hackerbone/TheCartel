@@ -9,9 +9,14 @@
         height: 100%;
         padding: 60px 1rem;
         max-height: 100vh;
+        width: 80%;
+
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+        }
 
         .dashboard-header {
-            font-size: 4rem;
+            font-size: 3rem;
             padding: 1.2rem;
             color: $primary-bg;
 

@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Landing from "./pages/Landing";
 import Posts from "./pages/Posts";
 import Profiles from "./pages/Profiles";
+import Stocks from "./pages/Stocks";
 
 const routes = [
   { path: "/", name: "Home", Component: Landing },
@@ -12,6 +13,7 @@ const routes = [
   { path: "/confidential", name: "Confidential", Component: Dashboard },
   { path: "/users", name: "Users", Component: Profiles },
   { path: "/posts", name: "Posts", Component: Posts },
+  { path: "/stocks", name: "Stocks", Component: Stocks },
 ];
 
 function App() {

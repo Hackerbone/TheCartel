@@ -1,0 +1,21 @@
+.stock-card {
+    background: transparent;
+    border: 6px solid $secondary-bg;
+    color: $secondary-bg;
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    height: 8rem;
+    margin: 1rem;
+    transition: 0.2s ease-in-out all;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        border: 6px solid $primary-text;
+        color: $primary-text;
+        transform: scale(1.2);
+    }
+}

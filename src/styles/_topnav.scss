@@ -9,7 +9,7 @@
     font-size: 2rem;
     top: -400px;
     z-index: 60;
-    background: rgba($color: $primary-bg, $alpha: 0.01);
+    background: rgba($color: $primary-bg, $alpha: 0.8);
 
     div {
         padding: 0 1rem;
@@ -33,6 +33,11 @@
 
         .nav-links {
             margin: 0 1rem;
+            transition: 0.2s ease-in-out all;
+
+            &:hover {
+                color: $primary-text;
+            }
         }
     }
 

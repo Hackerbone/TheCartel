@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FaTimes } from "react-icons/fa";
+import { FaHeart, FaTimes } from "react-icons/fa";
 
 export default function PostModal({ show, setShow, id }) {
   const [data, setData] = useState([]);
@@ -43,24 +43,39 @@ export default function PostModal({ show, setShow, id }) {
           <>
             <div className="post-img" style={{ backgroundImage: `url('${data.image}')` }}></div>
 
-            <h1>{data.text}</h1>
+            <h1 className="post-text">{data.text}</h1>
+            <p className="text-muted tags">
+              {data.tags.map((tag, idx) => {
+                return (
+                  <span className="tag" key={idx}>
+                    {tag}
+                  </span>
+                );
+              })}
+            </p>
+            <p className="text-muted">{new Date(data.publishDate).toDateString()}</p>
             <p className="text-muted">
               <a href={data.link} className="red-text">
-                Link
+                Post Link
               </a>
             </p>
-            <p className="text-muted">
-              <b>{data.likes}</b>
+            <p className="text-muted likes">
+              {" "}
+              <FaHeart /> <span>{data.likes}</span>
             </p>
             <h3>Posted By</h3>
-            <h4 className="text-muted">
+            <div className="post-profile-img" style={{ backgroundImage: `url('${data.owner.picture}')` }}></div>
+            <h5 className="text-muted">
               <b>
                 {data.owner.firstName} {data.owner.lastName}
               </b>
-            </h4>
+            </h5>
           </>
         ) : (
-          <div className="loader">Loading...</div>
+          <div className="spinner">
+            <div className="dot1"></div>
+            <div className="dot2"></div>
+          </div>
         )}
       </div>
     </div>

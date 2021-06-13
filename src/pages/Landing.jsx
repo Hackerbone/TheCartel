@@ -32,8 +32,8 @@ export default function Landing() {
         </div>
 
         <div className="glitch" ref={(el) => (glitchText = el)}>
-          <p className="glitch-text" data-text="BEGIN THE REBELLION">
-            BEGIN THE REBELLION
+          <p className="glitch-text" data-text="BRING THE ORDER BACK">
+            BRING THE ORDER BACK
           </p>
         </div>
         <StfButton to={"/access"}>Access Data</StfButton>

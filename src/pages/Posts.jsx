@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import TopNav from "../components/TopNav";
-import Typical from "react-typical";
 import { TweenMax, Power3 } from "gsap/gsap-core";
 import axios from "axios";
 import PostsCard from "../components/PostsCard";
 import PostModal from "../components/PostModal";
+import TypeIt from "typeit-react";
 
 export default function Posts() {
   const [data, setData] = useState([]);
@@ -22,7 +22,7 @@ export default function Posts() {
     });
 
     TweenMax.from(cardContainer, 3, {
-      delay: 6.5,
+      delay: 5,
       position: "relative",
       top: 400,
       opacity: 0,
@@ -30,13 +30,13 @@ export default function Posts() {
     });
 
     TweenMax.to(content, 1, {
-      delay: 6.5,
+      delay: 5,
       overflowY: "scroll",
       opacity: 1,
       ease: Power3.easeOut,
     });
     TweenMax.to(cardContainer, 3, {
-      delay: 6.5,
+      delay: 5,
       opacity: 1,
       top: 0,
       ease: Power3.easeOut,
@@ -49,7 +49,14 @@ export default function Posts() {
       <div className="posts-content" ref={(el) => (content = el)}>
         <div className="posts-header">
           {" "}
-          <Typical wrapper="div" steps={["Our analysis shows that these 201 social media posts are linked to the 100 subjects", 5000]} />
+          <TypeIt
+            element={"div"}
+            options={{
+              strings: ["Our analysis shows that 201 social media posts are linked to the 100 subjects"],
+              speed: 50,
+              waitUntilVisible: true,
+            }}
+          />
         </div>
         <div ref={(el) => (cardContainer = el)} className="card-container">
           {show ? (

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import TopNav from "../components/TopNav";
-import Typical from "react-typical";
+import TypeIt from "typeit-react";
 import Options from "../components/Options";
 import { TweenMax, Power3 } from "gsap/gsap-core";
 
@@ -32,10 +32,17 @@ export default function Dashboard() {
   }, []);
   return (
     <div className="container dashboard-container" ref={(el) => (dashboard = el)}>
-      <TopNav style={{ color: "#1b1b1b" }} />
+      <TopNav style={{ color: "#1b1b1b", background: "rgba(251, 245, 235,0.8)" }} />
       <div className="dashboard-content">
         <div className="dashboard-header">
-          <Typical wrapper="div" steps={["We have got some intel that might interest you", 3000]} />
+          <TypeIt
+            element={"div"}
+            options={{
+              strings: ["We have got some intel that might interest you"],
+              speed: 50,
+              waitUntilVisible: true,
+            }}
+          />
         </div>
 
         <div ref={(el) => (options = el)} className="options">

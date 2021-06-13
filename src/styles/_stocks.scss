@@ -1,8 +1,8 @@
-.posts-container {
+.stocks-container {
     height: auto;
     min-height: 100vh;
 
-    .posts-content {
+    .stocks-content {
         max-height: calc(100vh - 60px);
         width: 100%;
         min-height: calc(100vh - 60px);
@@ -10,8 +10,7 @@
         margin-top: 60px;
         padding: 0 1rem;
 
-
-        .posts-header {
+        .stocks-header {
             font-size: 3rem;
             padding: 1.2rem;
 
@@ -22,11 +21,15 @@
         }
 
         .card-container {
-            overflow-x: hidden;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+            .stocks-table {
+                display: flex;
+                flex-wrap: wrap;
 
+                @media only screen and (max-width: 768px) {
+                    justify-content: center;
+                }
+
+            }
+        }
     }
 }

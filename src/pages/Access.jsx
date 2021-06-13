@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import TopNav from "../components/TopNav";
-import Typical from "react-typical";
+import TypeIt from "typeit-react";
+
 import StfButton from "../components/StfButton";
 import { useHistory } from "react-router";
 export default function Access() {
@@ -33,9 +34,32 @@ export default function Access() {
       <TopNav />
       <div className="access-header">
         <span> Welcome </span>
-        <span className="strike">
-          <Typical wrapper="span" loop={Infinity} steps={["Leader", 3000, "Admin", 3000, "Rebel", 3000]} />
-        </span>
+        <TypeIt
+          className="strike"
+          element={"span"}
+          getBeforeInit={(instance) => {
+            instance
+              .type("Leader")
+              .pause(1000)
+              .delete(6)
+              .pause(500)
+
+              .type("Admin")
+              .pause(1000)
+              .delete(5)
+              .pause(500)
+
+              .type("Rebel")
+              .pause(1000)
+              .delete(5)
+              .pause(50);
+
+            // Remember to return it!
+            return instance;
+          }}
+          options={{ loop: true }}
+        />
+        {/* <Typical wrapper="span" loop={Infinity} steps={["Leader", 3000, "Admin", 3000, "Rebel", 3000]} /> */}
       </div>
       <div className="access-row">
         <input type="text" name="name" onChange={(e) => setInput(e.target.value)} className="input-box" placeholder="Who are you?" />
@@ -43,8 +67,35 @@ export default function Access() {
         <p className="text-muted" ref={(el) => (hintText = el)}>
           Hint : One of the three above
         </p>
-        <StfButton to="#" style={{ padding: "1rem 3rem" }} onClick={checkCredentials}>
-          <Typical wrapper="span" loop={Infinity} steps={["Enter", 3400, "Entrar", 3400, "Entrer", 3400]} />
+        <StfButton to="#" style={{ padding: "0.8rem 3rem" }} onClick={checkCredentials}>
+          {/* <button className="stf_btn" onClick={checkCredentials}>
+          <TypeIt
+            className=""
+            element={"div"}
+            getBeforeInit={(instance) => {
+              instance
+                .type("Enter")
+                .pause(800)
+                .delete(5)
+                .pause(500)
+
+                .type("Ingresar")
+                .pause(800)
+                .delete(8)
+                .pause(600)
+
+                .type("Entrar")
+                .pause(700)
+                .delete(6)
+                .pause(200);
+
+              // Remember to return it!
+              return instance;
+            }}
+            options={{ loop: true }}
+          />
+        </button> */}
+          Enter
         </StfButton>
       </div>
     </div>
