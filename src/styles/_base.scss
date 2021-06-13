@@ -70,6 +70,8 @@ a {
     opacity: 1;
 
     .navbar {
+        background: rgba($color: $primary-bg, $alpha: 0.01);
+
         top: 0;
     }
 }
@@ -80,6 +82,8 @@ a {
     opacity: 0;
 
     .navbar {
+        background: rgba($color: $primary-bg, $alpha: 0.01);
+
         top: -400px;
     }
 }

@@ -8,6 +8,8 @@
     width: 100%;
     font-size: 2rem;
     top: -400px;
+    z-index: 60;
+    background: rgba($color: $primary-bg, $alpha: 0.01);
 
     div {
         padding: 0 1rem;

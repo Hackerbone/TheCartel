@@ -41,6 +41,10 @@ export default function TopNav({ style }) {
         <NavLink key={"access"} to={"/access"} activeClassName="red-text" exact className="nav-links">
           access
         </NavLink>
+
+        <NavLink key={"confidential"} to={"/confidential"} activeClassName="red-text" exact className="nav-links">
+          dashboard
+        </NavLink>
         {/* <p className="nav-links">organisations</p>
         <p className="nav-links">people</p>
         <p className="nav-links">institutions</p> */}

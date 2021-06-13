@@ -3,6 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import Access from "./pages/Access";
 import Dashboard from "./pages/Dashboard";
 import Landing from "./pages/Landing";
+import Posts from "./pages/Posts";
 import Profiles from "./pages/Profiles";
 
 const routes = [
@@ -10,6 +11,7 @@ const routes = [
   { path: "/access", name: "Access", Component: Access },
   { path: "/confidential", name: "Confidential", Component: Dashboard },
   { path: "/users", name: "Users", Component: Profiles },
+  { path: "/posts", name: "Posts", Component: Posts },
 ];
 
 function App() {

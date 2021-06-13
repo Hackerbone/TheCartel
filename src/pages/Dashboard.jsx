@@ -6,6 +6,7 @@ import { TweenMax, Power3 } from "gsap/gsap-core";
 
 export default function Dashboard() {
   let options = useRef(null);
+  let dashboard = useRef(null);
 
   useEffect(() => {
     TweenMax.from(options, 3, {
@@ -22,9 +23,15 @@ export default function Dashboard() {
       transform: "scale(1)",
       ease: Power3.easeOut,
     });
+    TweenMax.to(dashboard, 3, {
+      delay: 3,
+      overflowY: "scroll",
+      opacity: 1,
+      ease: Power3.easeOut,
+    });
   }, []);
   return (
-    <div className="container dashboard-container">
+    <div className="container dashboard-container" ref={(el) => (dashboard = el)}>
       <TopNav style={{ color: "#1b1b1b" }} />
       <div className="dashboard-content">
         <div className="dashboard-header">

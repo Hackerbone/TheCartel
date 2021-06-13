@@ -8,6 +8,7 @@
     padding-bottom: 2rem;
     transition: 0.4s ease-in-out all;
     filter: blur(2px);
+    cursor: pointer;
 
     .profile-img {
         margin: 0.3rem 0;
@@ -17,13 +18,6 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-    }
-
-
-    @media only screen and (max-width: 768px) {
-
-        filter: blur(0);
-
     }
 
     @media only screen and (max-width: 522px) {

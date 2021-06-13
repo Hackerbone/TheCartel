@@ -2,11 +2,11 @@ import React, { useRef, useEffect, useState } from "react";
 import TopNav from "../components/TopNav";
 import Typical from "react-typical";
 import { TweenMax, Power3 } from "gsap/gsap-core";
-import DataCard from "../components/DataCard";
 import axios from "axios";
-import Modal from "../components/Modal";
+import PostsCard from "../components/PostsCard";
+import PostModal from "../components/PostModal";
 
-export default function Profiles() {
+export default function Posts() {
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState("");
   const [show, setShow] = useState(0);
@@ -15,7 +15,7 @@ export default function Profiles() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "https://dummy-wireframe.iecsemanipal.com/social-media/users?apikey=wzo04y8hhu9fqcqrda1ib8",
+      url: "https://dummy-wireframe.iecsemanipal.com/social-media/posts?apikey=wzo04y8hhu9fqcqrda1ib8",
     }).then((res) => {
       console.log(res.data);
       setData(res.data.data);
@@ -44,27 +44,21 @@ export default function Profiles() {
   }, []);
 
   return (
-    <div className="container profile-container">
+    <div className="container posts-container">
       <TopNav />
-      <div className="profile-content" ref={(el) => (content = el)}>
-        <div className="profile-header">
+      <div className="posts-content" ref={(el) => (content = el)}>
+        <div className="posts-header">
           {" "}
-          <Typical wrapper="div" steps={["Social Media Users have been compromised. We have profiles of 100 users. Hover to reveal their facade", 1000]} />
+          <Typical wrapper="div" steps={["Our analysis shows that these 201 social media posts are linked to the 100 subjects", 5000]} />
         </div>
         <div ref={(el) => (cardContainer = el)} className="card-container">
           {show ? (
-            <Modal id={selected} show={show} setShow={setShow} />
+            <PostModal id={selected} show={show} setShow={setShow} />
           ) : (
             <>
               {data.map((item, index) => (
                 <React.Fragment key={index}>
-                  <div className="stack-lines top-card">
-                    <div className="stack-lines">
-                      <div className="stack-lines">
-                        <DataCard key={index} item={item} setSelected={setSelected} setShow={setShow} />
-                      </div>
-                    </div>{" "}
-                  </div>
+                  <PostsCard key={index} item={item} setSelected={setSelected} setShow={setShow} />
                 </React.Fragment>
               ))}
             </>

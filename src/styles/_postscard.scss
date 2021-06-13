@@ -1,0 +1,41 @@
+.post-card {
+    background: $secondary-bg;
+    color: $primary-bg;
+    padding: 1.4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 22rem;
+    padding-bottom: 2rem;
+
+    margin: 1rem 0.2rem;
+    transition: 0.4s ease-in-out all;
+    filter: blur(2px);
+    cursor: pointer;
+
+    .post-img {
+        margin: 0.3rem 0;
+        width: auto;
+        height: 10rem;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    @media only screen and (max-width: 522px) {
+        width: 18rem;
+
+    }
+
+
+}
+
+.post-card:hover {
+    filter: blur(0px);
+    background: $primary-text;
+    color: $secondary-bg;
+
+    .red-text {
+        color: $secondary-bg;
+        text-decoration: underline;
+    }
+}
