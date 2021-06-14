@@ -74,8 +74,8 @@ export default function StockModal({ show, setShow, id }) {
               <h3> {data.Name}</h3>
               <h5>{data.Address}</h5>
               <p className="text-muted">
-                {!read ? data.Description.slice(0, 150) : data.Description}...
-                <span className="red-text" onClick={() => setRead(!read)}>
+                {!read ? data.Description.slice(0, 150) + "..." : data.Description}
+                <span className="red-text" style={{ paddingLeft: "1rem", cursor: "pointer" }} onClick={() => setRead(!read)}>
                   {!read ? "Read More" : "Collapse"}
                 </span>
               </p>

@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Secret Task Force - Wireframe (IECSE)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Developer : S Sitaraman (a.k.a hackerbone), Team ID : 57744 (Solo)
 
-## Available Scripts
+- Designed a responsive Cartel themed minimalist website for the given prompt. The website is hosted currently on netlify. [Site Link](https://stf-hackerbone.netlify.app/)
 
-In the project directory, you can run:
+- Frameworks and Software used : ReactJS, Sass (Scss), Figma
 
-### `yarn start`
+- The webpage was created using custom CSS, no bootstrap and is mobile responsive (Yup iPhone 5/SE as well)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- One of the things I found was that only on iPhones the view port is a bit zoomed, tried to use meta tags for that but did not work. It works perfectly on iPhones if the screen is pinched to zoom out. This issue occurs in iPhones only since the `100vh` height includes the URL Bar and the bottom navs in browsers like chrome/safari etc.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Here are some snapshots of the website
 
-### `yarn test`
+#### Landing page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Landing Page](/images/landing.png)
 
-### `yarn build`
+#### Access page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Access Page](/images/accesspage.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Dashboard page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Dashboard Page](/images/dashboard.png)
 
-### `yarn eject`
+#### Social Media Users page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Users Page](/images/users.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Social Media Users - Specific page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![User Specific Page](/images/user-specific.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Social Media Posts page
 
-## Learn More
+![Posts Page](/images/posts.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Social Media Posts - Specific page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Post Specific Page](/images/post-specific.png)
 
-### Code Splitting
+#### Stocks page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Stocks Page](/images/stocks.png)
 
-### Analyzing the Bundle Size
+#### Stock - Specific page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Stock Specific Page](/images/stock-specific.png)
 
-### Making a Progressive Web App
+#### Institutions page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Institutions Page](/images/institutions.png)
 
-### Advanced Configuration
+#### Institution - Specific page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Institutions Specific Page](/images/institution-specific.png)
 
-### Deployment
+#### Mobile Version
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Mobile Responsive](/images/mobile.png)

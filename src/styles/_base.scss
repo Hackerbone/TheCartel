@@ -160,3 +160,24 @@ a {
         -webkit-transform: scale(1.0);
     }
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    transition: 0.1s ease-in-out all;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $primary-bg;
+    transition: 0.1s ease-in-out all;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary-text;
+    transition: 0.1s ease-in-out all;
+
+}
