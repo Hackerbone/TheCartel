@@ -9,6 +9,10 @@ export default function Dashboard() {
   let dashboard = useRef(null);
 
   useEffect(() => {
+    if (localStorage.getItem("user") === "admin" || localStorage.getItem("user") === "rebel" || localStorage.getItem("user") === "leader") {
+    } else {
+      window.location.href = "/access";
+    }
     TweenMax.from(options, 3, {
       delay: 3,
       top: 400,

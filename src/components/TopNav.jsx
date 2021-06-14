@@ -2,13 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { FaFistRaised, FaRebel } from "react-icons/fa";
 import { TweenMax } from "gsap";
 import { Power3 } from "gsap/gsap-core";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 export default function TopNav({ style }) {
   let hamburgerIcon = useRef(null);
   let topNavigation = useRef(null);
 
   useEffect(() => {
-    console.log(hamburgerIcon);
     TweenMax.to(hamburgerIcon, 1, {
       opacity: 1,
       ease: Power3.easeOut,
@@ -20,6 +19,7 @@ export default function TopNav({ style }) {
     });
     TweenMax.to(topNavigation, 1, {
       top: 0,
+      right: 0,
       ease: Power3.easeOut,
     });
   }, []);
@@ -41,10 +41,26 @@ export default function TopNav({ style }) {
         <NavLink key={"access"} to={"/access"} activeClassName="red-text" exact className="nav-links">
           access
         </NavLink>
+        {localStorage.getItem("user") === "admin" || localStorage.getItem("user") === "rebel" || localStorage.getItem("user") === "leader" ? (
+          <>
+            <NavLink key={"confidential"} to={"/confidential"} activeClassName="red-text" exact className="nav-links">
+              dashboard
+            </NavLink>
 
-        <NavLink key={"confidential"} to={"/confidential"} activeClassName="red-text" exact className="nav-links">
-          dashboard
-        </NavLink>
+            <Link
+              to={"/access"}
+              onClick={() => {
+                localStorage.clear();
+              }}
+              exact
+              className="nav-links"
+            >
+              logout
+            </Link>
+          </>
+        ) : (
+          <></>
+        )}
         {/* <p className="nav-links">organisations</p>
         <p className="nav-links">people</p>
         <p className="nav-links">institutions</p> */}

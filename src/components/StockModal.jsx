@@ -1,10 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { FaTimes } from "react-icons/fa";
-
+import { TweenMax } from "gsap";
+import { Power3 } from "gsap/gsap-core";
 export default function StockModal({ show, setShow, id }) {
   const [data, setData] = useState([]);
   const [read, setRead] = useState(0);
+
+  let modalContainer = useRef(null);
+
+  const closeModal = () => {
+    TweenMax.from(modalContainer, 0.2, {
+      transform: "scale(1)",
+      ease: Power3.easeInOut,
+    });
+    TweenMax.to(modalContainer, 0.2, {
+      transform: "scale(0)",
+    });
+
+    setTimeout(() => {
+      setShow(!show);
+      setData("");
+    }, 350);
+  };
   useEffect(() => {
     axios({
       method: "GET",
@@ -14,9 +32,17 @@ export default function StockModal({ show, setShow, id }) {
       console.log("HI?");
       setData(res.data.data);
     });
+
+    TweenMax.from(modalContainer, 0.2, {
+      transform: "scale(0)",
+    });
+    TweenMax.to(modalContainer, 0.2, {
+      transform: "scale(1)",
+      ease: Power3.easeInOut,
+    });
   }, [id]);
   return (
-    <div style={show ? { display: "flex" } : { display: "none" }} className="modal-container stock-modal">
+    <div style={show ? { display: "flex" } : { display: "none" }} className="modal-container stock-modal" ref={(el) => (modalContainer = el)}>
       <div className="bg-svg">
         <svg width="2216" height="1189" viewBox="0 0 2216 1189" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -36,13 +62,7 @@ export default function StockModal({ show, setShow, id }) {
           <circle cx="2141.5" cy="71.5" r="22.5" stroke="#f0473e" strokeWidth="5" />
         </svg>
       </div>
-      <button
-        className="cancel-btn"
-        onClick={() => {
-          setShow(!show);
-          setData("");
-        }}
-      >
+      <button className="cancel-btn" onClick={closeModal}>
         <FaTimes />
         Close
       </button>
