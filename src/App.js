@@ -1,5 +1,6 @@
 import { Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+import NotFound from "./pages/404";
 import Access from "./pages/Access";
 import Dashboard from "./pages/Dashboard";
 import Institutions from "./pages/Institutions";
@@ -32,6 +33,10 @@ function App() {
           )}
         </Route>
       ))}
+
+      <Route path={"/*"}>
+        <NotFound />
+      </Route>
     </>
   );
 }
