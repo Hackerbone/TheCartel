@@ -59,3 +59,7 @@
 #### Mobile Version
 
 ![Mobile Responsive](/images/mobile.png)
+
+#### 404 Page
+
+![404 Page](/images/404.png)
